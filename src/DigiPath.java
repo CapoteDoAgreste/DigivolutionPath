@@ -22,6 +22,7 @@ public class DigiPath {
 	static int VP = 0;
 	
 	public void Path(String InitialDigimon,String FinalDigimon) {
+		//Setting the basic variables, like states, possible digivolutions and states
 		db.DigiTypeSet();
 		db.DigiEvolutionSet();
 		States.add("Baby");
@@ -34,7 +35,7 @@ public class DigiPath {
 		States.add("Armor");
 		
 		System.out.println(String.format("Iniciando por %s até %s",InitialDigimon,FinalDigimon));
-		
+		//That script works better when the First digimon have a minor state than the Second
 		String Firstt = InitialDigimon;
 		String Secondd = FinalDigimon;
 		
@@ -53,7 +54,7 @@ public class DigiPath {
 		
 		found = seek(ID,STATE,FinalDigimon);
 		VP+=1;
-		System.out.println("Vezes pesquisadas = "+VP);
+		System.out.println("Times Searched = "+VP);
 		
 		if (InitialDigimon == FinalDigimon) {
 			FinalDigimon = Secondd;
@@ -68,12 +69,12 @@ public class DigiPath {
 						String newDigimon = SearchCacheInTraining.get(i);
 						ID = getID(newDigimon);
 						STATE = getState(ID);
-						System.out.println(String.format("Indo agora por %s até %s",newDigimon,FinalDigimon));
+						System.out.println(String.format("Going from %s to %s",newDigimon,FinalDigimon));
 						
 						found = seek(ID,STATE,FinalDigimon);
 						if(found) {
 							fou = true;
-							System.out.println("Encontrado através do "+newDigimon);
+							System.out.println("Found through "+newDigimon);
 							beforeDigimon.add(newDigimon);
 						}
 					}
@@ -84,12 +85,12 @@ public class DigiPath {
 						String newDigimon = SearchCacheBaby.get(i);
 						ID = getID(newDigimon);
 						STATE = getState(ID);
-						System.out.println(String.format("Indo agora por %s até %s",newDigimon,FinalDigimon));
+						System.out.println(String.format("Going from %s to %s",newDigimon,FinalDigimon));
 						
 						found = seek(ID,STATE,FinalDigimon);
 						if(found) {
 							fou = true;
-							System.out.println("Encontrado através do "+newDigimon);
+							System.out.println("Found through "+newDigimon);
 							beforeDigimon.add(newDigimon);
 						}
 					}
@@ -99,12 +100,12 @@ public class DigiPath {
 							String newDigimon = SearchCacheRookie.get(i);
 							ID = getID(newDigimon);
 							STATE = getState(ID);
-							System.out.println(String.format("Indo agora por %s até %s",newDigimon,FinalDigimon));
+							System.out.println(String.format("Going from %s to %s",newDigimon,FinalDigimon));
 							
 							found = seek(ID,STATE,FinalDigimon);
 							if(found) {
 								fou = true;
-								System.out.println("Encontrado através do "+newDigimon);
+								System.out.println("Found through "+newDigimon);
 								beforeDigimon.add(newDigimon);
 							}
 						}
@@ -116,12 +117,12 @@ public class DigiPath {
 						String newDigimon = SearchCacheInTraining.get(i);
 						ID = getID(newDigimon);
 						STATE = getState(ID);
-						System.out.println(String.format("Indo agora por %s até %s",newDigimon,FinalDigimon));
+						System.out.println(String.format("Going from %s to %s",newDigimon,FinalDigimon));
 						
 						found = seek(ID,STATE,FinalDigimon);
 						if(found) {
 							fou = true;
-							System.out.println("Encontrado através do "+newDigimon);
+							System.out.println("Found through "+newDigimon);
 							beforeDigimon.add(newDigimon);
 						}
 					}
@@ -131,12 +132,12 @@ public class DigiPath {
 							String newDigimon = SearchCacheChampion.get(i);
 							ID = getID(newDigimon);
 							STATE = getState(ID);
-							System.out.println(String.format("Indo agora por %s até %s",newDigimon,FinalDigimon));
+							System.out.println(String.format("Going from %s to %s",newDigimon,FinalDigimon));
 							
 							found = seek(ID,STATE,FinalDigimon);
 							if(found) {
 								fou = true;
-								System.out.println("Encontrado através do "+newDigimon);
+								System.out.println("Found through "+newDigimon);
 								beforeDigimon.add(newDigimon);
 							}
 						}
@@ -148,12 +149,12 @@ public class DigiPath {
 						String newDigimon = SearchCacheRookie.get(i);
 						ID = getID(newDigimon);
 						STATE = getState(ID);
-						System.out.println(String.format("Indo agora por %s até %s",newDigimon,FinalDigimon));
+						System.out.println(String.format("Going from %s to %s",newDigimon,FinalDigimon));
 						
 						found = seek(ID,STATE,FinalDigimon);
 						if(found) {
 							fou = true;
-							System.out.println("Encontrado através do "+newDigimon);
+							System.out.println("Found through "+newDigimon);
 							beforeDigimon.add(newDigimon);
 						}
 					}
@@ -163,12 +164,12 @@ public class DigiPath {
 							String newDigimon = SearchCacheUltimate.get(i);
 							ID = getID(newDigimon);
 							STATE = getState(ID);
-							System.out.println(String.format("Indo agora por %s até %s",newDigimon,FinalDigimon));
+							System.out.println(String.format("Going from %s to %s",newDigimon,FinalDigimon));
 							
 							found = seek(ID,STATE,FinalDigimon);
 							if(found) {
 								fou = true;
-								System.out.println("Encontrado através do "+newDigimon);
+								System.out.println("Found through "+newDigimon);
 								beforeDigimon.add(newDigimon);
 							}
 						}
@@ -180,7 +181,7 @@ public class DigiPath {
 						String newDigimon = SearchCacheChampion.get(i);
 						ID = getID(newDigimon);
 						STATE = getState(ID);
-						System.out.println(String.format("Indo agora por %s até %s",newDigimon,FinalDigimon));
+						System.out.println(String.format("Going from %s to %s",newDigimon,FinalDigimon));
 						
 						found = seek(ID,STATE,FinalDigimon);
 						if(found) {
@@ -195,7 +196,7 @@ public class DigiPath {
 							String newDigimon = SearchCacheMega.get(i);
 							ID = getID(newDigimon);
 							STATE = getState(ID);
-							System.out.println(String.format("Indo agora por %s até %s",newDigimon,FinalDigimon));
+							System.out.println(String.format("Going from %s to %s",newDigimon,FinalDigimon));
 							
 							found = seek(ID,STATE,FinalDigimon);
 							if(found) {
@@ -212,12 +213,12 @@ public class DigiPath {
 						String newDigimon = SearchCacheUltimate.get(i);
 						ID = getID(newDigimon);
 						STATE = getState(ID);
-						System.out.println(String.format("Indo agora por %s até %s",newDigimon,FinalDigimon));
+						System.out.println(String.format("Going from %s to %s",newDigimon,FinalDigimon));
 						
 						found = seek(ID,STATE,FinalDigimon);
 						if(found) {
 							fou = true;
-							System.out.println("Encontrado através do "+newDigimon);
+							System.out.println("Found through "+newDigimon);
 							beforeDigimon.add(newDigimon);
 						}
 					}
@@ -227,12 +228,12 @@ public class DigiPath {
 							String newDigimon = SearchCacheUltra.get(i);
 							ID = getID(newDigimon);
 							STATE = getState(ID);
-							System.out.println(String.format("Indo agora por %s até %s",newDigimon,FinalDigimon));
+							System.out.println(String.format("Going from %s to %s",newDigimon,FinalDigimon));
 							
 							found = seek(ID,STATE,FinalDigimon);
 							if(found) {
 								fou = true;
-								System.out.println("Encontrado através do "+newDigimon);
+								System.out.println("Found through "+newDigimon);
 								beforeDigimon.add(newDigimon);
 							}
 						}
@@ -244,7 +245,7 @@ public class DigiPath {
 						String newDigimon = SearchCacheMega.get(i);
 						ID = getID(newDigimon);
 						STATE = getState(ID);
-						System.out.println(String.format("Indo agora por %s até %s",newDigimon,FinalDigimon));
+						System.out.println(String.format("Going from %s to %s",newDigimon,FinalDigimon));
 						
 						found = seek(ID,STATE,FinalDigimon);
 						if(found) {
@@ -260,7 +261,7 @@ public class DigiPath {
 						String newDigimon = SearchCacheRookie.get(i);
 						ID = getID(newDigimon);
 						STATE = getState(ID);
-						System.out.println(String.format("Indo agora por %s até %s",newDigimon,FinalDigimon));
+						System.out.println(String.format("Going from %s to %s",newDigimon,FinalDigimon));
 						
 						found = seek(ID,STATE,FinalDigimon);
 						if(found) {
@@ -275,12 +276,12 @@ public class DigiPath {
 							String newDigimon = SearchCacheNone.get(i);
 							ID = getID(newDigimon);
 							STATE = getState(ID);
-							System.out.println(String.format("Indo agora por %s até %s",newDigimon,FinalDigimon));
+							System.out.println(String.format("Going from %s to %s",newDigimon,FinalDigimon));
 							
 							found = seek(ID,STATE,FinalDigimon);
 							if(found) {
 								fou = true;
-								System.out.println("Encontrado através do "+newDigimon);
+								System.out.println("Found through "+newDigimon);
 								beforeDigimon.add(newDigimon);
 							}
 						}
@@ -291,12 +292,12 @@ public class DigiPath {
 							String newDigimon = SearchCacheInTraining.get(i);
 							ID = getID(newDigimon);
 							STATE = getState(ID);
-							System.out.println(String.format("Indo agora por %s até %s",newDigimon,FinalDigimon));
+							System.out.println(String.format("Going from %s to %s",newDigimon,FinalDigimon));
 							
 							found = seek(ID,STATE,FinalDigimon);
 							if(found) {
 								fou = true;
-								System.out.println("Encontrado através do "+newDigimon);
+								System.out.println("Found through "+newDigimon);
 								beforeDigimon.add(newDigimon);
 							}
 						}
@@ -308,12 +309,12 @@ public class DigiPath {
 						String newDigimon = SearchCacheRookie.get(i);
 						ID = getID(newDigimon);
 						STATE = getState(ID);
-						System.out.println(String.format("Indo agora por %s até %s",newDigimon,FinalDigimon));
+						System.out.println(String.format("Going from %s to %s",newDigimon,FinalDigimon));
 						
 						found = seek(ID,STATE,FinalDigimon);
 						if(found) {
 							fou = true;
-							System.out.println("Encontrado através do "+newDigimon);
+							System.out.println("Found through "+newDigimon);
 							beforeDigimon.add(newDigimon);
 						}
 					}
@@ -323,12 +324,12 @@ public class DigiPath {
 							String newDigimon = SearchCacheChampion.get(i);
 							ID = getID(newDigimon);
 							STATE = getState(ID);
-							System.out.println(String.format("Indo agora por %s até %s",newDigimon,FinalDigimon));
+							System.out.println(String.format("Going from %s to %s",newDigimon,FinalDigimon));
 							
 							found = seek(ID,STATE,FinalDigimon);
 							if(found) {
 								fou = true;
-								System.out.println("Encontrado através do "+newDigimon);
+								System.out.println("Found through "+newDigimon);
 								beforeDigimon.add(newDigimon);
 							}
 						}
@@ -339,10 +340,10 @@ public class DigiPath {
 				
 			}
 			VP+=1;
-			System.out.println("Vezes pesquisadas = "+VP);
+			System.out.println("Times searched = "+VP);
 		}
 		if(found) {
-			System.out.println("Encontrado");
+			System.out.println("Found!");
 		}
 		System.out.println(SearchCacheChampion);
 	}
